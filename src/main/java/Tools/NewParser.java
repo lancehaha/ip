@@ -25,6 +25,10 @@ public class NewParser {
                 String s = tasks.deleteTask(Integer.parseInt(input.substring(7)) - 1);
                 storage.saveTasks(tasks);
                 return s;
+            } else if (input.startsWith("update")) {
+                String command_message = tasks.updateTask(input);
+                storage.saveTasks(tasks);
+                return command_message;
             } else if (input.startsWith("todo")) {
                 String s = tasks.addTodoTask(input);
                 storage.saveTasks(tasks);
