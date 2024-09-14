@@ -1,5 +1,4 @@
 package Tools;
-
 import Tasks.Deadline;
 import Tasks.Event;
 import Tasks.Task;
@@ -36,7 +35,7 @@ public class NewStorage {
 
     public void parseTask(String[] split, NewTaskList tasks) throws FileNotFoundException {
         switch (split[0]) {
-        case "T":
+            case "T":
                 if (split[1].equals("1")) {
                     Todo todo = new Todo(split[2], split[3]);
                     todo.markDone();
@@ -47,7 +46,7 @@ public class NewStorage {
                 }
                 break;
 
-        case "D":
+            case "D":
                 if (split[1].equals("1")) {
                     Deadline deadline = new Deadline(split[2], split[3], split[4]);
                     deadline.markDone();
@@ -57,7 +56,7 @@ public class NewStorage {
                     tasks.add(deadline);
                 }
                 break;
-        case "E":
+            case "E":
                 if (split[1].equals("1")) {
                     Event event = new Event(split[2], split[3], split[4], split[5]);
                     event.markDone();
